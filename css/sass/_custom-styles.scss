@@ -1,0 +1,344 @@
+// #### GENERAL ####
+
+.content-box { // Class used for adding border and padding to the main content
+	padding-top: 80px;
+	border-left: 1px solid $body-border-color;
+	border-right: 1px solid $body-border-color;
+}
+
+
+// #### HEADER ####
+
+header.main {
+	position: relative;
+	min-height: 100px;
+	border-bottom: 6px solid $main-header-line;
+	background: $main-header-bg;
+	color: $white;
+}
+
+.logo {
+	float: left;
+	padding: 20px 0 0 5px;
+	color: $white;
+	font-size: $h1-size;
+	text-decoration: none;
+}
+
+.logo span { // Styles for dot at the end of logo.
+	color: $main-highlight;
+}
+
+
+@include screen-md {
+	header.main { min-height: 137px; }
+
+	.logo {
+		padding: 38px 0 0 30px;
+		font-size: 1.1*$h1-size;
+	}
+}
+
+
+// #### POSTS ####
+
+.post-img[class^="col-"] { // Removes column padding for post img in XS & SM.
+	margin: 0;
+	padding: 0;
+}
+
+.post h2 {
+	margin:0;
+	padding: 10px 0 20px 0;
+}
+
+.post footer {
+	margin: 0;
+	padding: 20px 0 60px 0;
+	@include clearfix;
+}
+
+.post .date { // Styles for date in post footer.
+	display: inline-block;
+	padding: 13px 0 0 0;
+	color: $light-text-color;
+
+	&:hover, &:active {
+		[class^="icon-"] {
+			color: $main-highlight;
+		}
+	}
+}
+
+.post .date.touch_effect {
+	[class^="icon-"] {
+		@include touch-fix;
+		color: $main-highlight;
+	}
+}
+
+
+.post .more { // Styles for "Continue reading" button in post footer.
+	float: right;
+	display: inline-block;
+	margin: 0;
+	padding: 10px 25px;
+	border: 2px solid $body-border-color;
+	background: $secondary-bg;
+	color: $light-text-color;
+	text-decoration: none;
+	@include border-radius-single(25px);
+
+	&:hover, &:active {
+		border: 2px solid $main-highlight;
+	}
+}
+
+.post .more.touch_effect {
+	@include touch-fix;
+	border: 2px solid $main-highlight;
+}
+
+@include screen-custom (425px) {
+	.post .more {
+		margin: 0 25px 0 0;
+	}
+}
+
+@include screen-md {
+	.post-img[class^="col-"] { padding-right: 15px; } // Brings back right padding to make more space between post and sidebar.
+	
+	.post footer { padding: 30px 0 80px 0; }
+}
+
+
+// #### SIDEBAR ####
+
+// Main sidebar content
+.sidebar-box { padding: 0 0 30px 0; }
+
+.sidebar-header {
+	margin: 0 -15px 20px 0;
+	padding: 15px 25px;
+	border-left: 4px solid $main-highlight;
+	background: $secondary-bg;
+	color: $light-text-color;
+	font-size: $h4-size;
+	text-transform: uppercase;
+}
+
+.sidebar-box p {
+	margin: 0 15px 15px 15px;
+	padding: 0;
+}
+
+// Sidebar form styles
+.sidebar-box form { padding-top: 10px;}
+
+.sidebar-box [type="text"] {
+	width: 235px;
+	margin: 0 0 0 15px;
+	padding: 13px 0 13px 13px;
+	border: 1px solid $body-border-color;
+	border-right: none;
+}
+
+.sidebar-box [type="submit"] {
+	margin: 0;
+	padding: 13px 13px 13px 5px;
+	border: 1px solid $body-border-color;
+	border-left: none;
+	background: $white;
+	color: lighten($light-text-color, 30%);
+	cursor: pointer;
+
+	&:hover, &:active {
+		color: $light-text-color;
+	}
+}
+
+.sidebar-box [type="submit"].touch_effect {
+	@include touch-fix;
+	color: $light-text-color;
+}
+
+
+@include screen-md {
+	.sidebar-box { padding: 0 0 50px 0; }
+}
+
+@include screen-lg {
+	.sidebar-box [type="text"] { width: 300px; }
+}
+
+
+// #### PAGINATION ####
+
+.pagination-box { // Class used for adding border and positioning
+	position: relative;
+	margin-top: 60px;
+	border-top: 1px solid $body-border-color;
+}
+
+.pag { // General styles for PREVIOUS & NEXT buttons.
+	position: absolute;
+	top: 27px;
+	font-size: 20px;
+	color: $text-color;
+	text-decoration: none;
+
+	&:hover, &:active {
+		[class^="icon-"] { color: $main-highlight;}
+	}
+}
+
+.pag.touch_effect {
+	[class^="icon-"] {
+		@include touch-fix;
+		color: $main-highlight;
+	}
+}
+
+.pag { // On small screens turns off span with "NEWER/OLDER POSTS" and increases "<< >>" icon size.
+	[class^="icon-"] { font-size: 2em;}
+	span { display: none;}
+}
+
+.pag.prev { left: 5px; }
+.pag.next { right: 5px; }
+
+
+.pag.off { // Turns off link and changes font color.
+	pointer-events: none;
+	cursor: default;
+	color: #b5b5b5;
+	
+	&:hover, &:active {
+		[class^="icon-"] { color: #b5b5b5;}
+	}
+}
+
+.pagination { 
+	margin: 0;
+	padding: 40px 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.pagination li {
+	margin: 0 5px 0 0;
+	background: $pagination-bg;
+	display: inline-block;
+	
+	&:last-of-type { margin: 0; }
+}
+
+.pagination a { 
+	display: block;
+	padding: 6px 13px;
+	border: 1px solid darken($pagination-bg, 5%);
+	color: #b5b5b5;
+	font-size: $larger-font-size;
+	text-decoration: none;
+
+	&:hover, &:active {
+		color: $text-color;
+		border: 1px solid $main-highlight;
+	}
+}
+
+.pagination a.touch_effect {
+	@include touch-fix;
+	color: $text-color;
+	border: 1px solid $main-highlight;
+}
+
+.pagination .active { // Styles for current page number.
+	color: $text-color;
+	border: 1px solid darken($pagination-bg, 20%);
+	background: darken($pagination-bg, 5%);
+}
+
+@include screen-custom(500px) {
+	.pag.prev { left: 35px; }
+	.pag.next { right: 35px; }
+}
+
+@include screen-sm {
+	.pag {
+		top: 42px;
+
+		[class^="icon-"] { font-size: 1em }
+		span { display: inline; }
+	}
+}
+
+@include screen-md {
+	.pagination-box { margin-top: 20px;}	
+}
+
+// #### FOOTER ####
+
+footer.main {
+	padding: 50px 0;
+	border-top: 1px solid $body-border-color;
+	background: $secondary-bg;
+	text-align: center;
+}
+
+footer.main .logo { // Adapting logo in footer (smaller, new color, in block)
+	padding: 0;
+	float: none;
+	color: #333;
+	font-size: $h1-size/1.1;
+}
+
+.copyright {
+	padding: 10px 0 15px 0;
+	color: $light-text-color;
+}
+
+.social-media { // General styles for social media UL
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.social-media li { // Base for social media icons
+	display: inline-block;
+	margin: 0 10px 0 0;
+	background: lighten($light-text-color, 30%);
+
+	&:last-of-type { margin: 0; }
+}
+
+ // Hover & effects for specific social media + Fix for touch screens
+.fb { &:hover, &:active { background: #3b5998; }} // Facebook
+.fb.touch_effect {@include touch-fix; background: #3b5998;}
+
+.twt { &:hover, &:active { background: #55acee; }} // Twitter
+.twt.touch_effect {@include touch-fix; background:#55acee;}
+
+.inst { &:hover, &:active { background: #e95950; }} // Instagram
+.inst.touch_effect {@include touch-fix; background:#e95950}
+
+.blg { &:hover, &:active { background: #f87f14; }} // Blogger
+.blg.touch_effect {@include touch-fix; background:#f87f14}
+
+.fb,.twt,.inst,.blg { &:hover, &:active { @include transition-variable(0.1s); }}
+
+.social-media li a { // Styles for social media icons
+	display: block;
+	padding: 6px;
+	color: $secondary-bg;
+	font-size: 1.4em;
+	text-decoration: none;
+}
+
+@include screen-md {
+	footer.main { padding: 80px 0; }
+
+	footer.main .logo { font-size: $h1-size; }
+
+	.copyright { padding: 15px 0 20px 0; }
+}
