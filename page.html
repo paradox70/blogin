@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="HTML,CSS,SASS,blogin">
+  <meta name="author" content="Łukasz Skuciński">
+
+  <title>Page - Łukasz Skuciński</title>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext" rel="stylesheet"> 
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+  <header id="top" class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a id="main-logo" class="logo" href="index.html">Blogin<span>.</span></a>
+
+          <button id="nav-open" type="button"><i class="icon icon-menu"></i></button>
+          <nav id="main-nav" class="nav nav-mobile-off">
+            <div class="nav-mobile-bg">
+              <button id="nav-close" type="button"><i class="icon icon-cancel"></i></button>
+              <ul class="navigation" role="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page.html" class="active">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="page.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>      
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container content-box"> <!-- Main content -->
+    <div class="row">
+      <main class="main-content col-sm-12 col-md-8"> <!-- MAIN CONTENT WRAPPER-->
+        <div class="row">
+          <div class="col-sm-12">
+            <article class="post single">
+              <header class="post-header">
+                <h2 class="title">About us</h2>
+              </header>
+                           
+              <div class="post-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque magnam nulla quaerat itaque facilis totam similique laboriosam veritatis deserunt. Sapiente ducimus molestiae, possimus eum dicta, voluptatibus corporis hic voluptatem!</p>
+                <p>Tenetur animi eius nemo expedita est voluptatem. Unde soluta ea maxime corrupti eaque quasi consectetur exercitationem nisi impedit eveniet veritatis vel et, a placeat inventore explicabo sunt dicta quia ducimus.</p>
+              </div>
+            
+              <footer class="post-footer">
+                <a href="#" class="button edit">Edit</a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </main> 
+
+      <aside class="col-sm-12 col-md-4"> <!-- SIDEBAR WRAPPER -->
+        <div class="row">
+          <div class="col-xs-12"> <!-- About -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-header">About blogin</h3>
+              <p>Duis aute irure dolor in reprehenderit in <a href="#">voluptate velit esse</a> cillum dolore eu fugiat nulla pariatur.</p>
+              <p>Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+          <div class="col-xs-12"> <!-- Search -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-header">Search</h3>
+              <form role="search" id="search-engine" action="#">
+                <input type="text" name="search" placeholder="What are you looking for?"><button type="submit" class="submit form-btn"><i class="icon icon-search"></i></button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-xs-12"> <!-- Newsletter -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-header">Stay tuned</h3>
+              <p>Aenean at leo eleifend, varius arcu et, condimentum massa.</p>
+              <form id="newsletter" action="#">
+                <input type="text" name="email" placeholder="Your email*"><button type="submit" class="submit form-btn"><i class="iconicon-right-open"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div> 
+
+  <footer class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="logo" href="index.html">Blogin<span>.</span></a>
+
+          <p class="copyright">© 2017 HTML/CSS by Łukasz Skuciński. Blogin layout by Pixelhint.com</p>
+
+          <ul class="social-media">
+            <li><a class="fb" href="#" title="Facebook Profile"><i class="iconicon-facebook"></i></a></li>
+            <li><a class="twt" href="#" title="Twitter Profile"><i class="iconicon-twitter-bird"></i></a></li>
+            <li><a class="inst" href="#" title="Instagram Profile"><i class="iconicon-instagram"></i></a></li>
+            <li><a class="blg" href="#" title="Blogger Profile"><i class="iconicon-blogger"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/nav-mobile.min.js"></script>
+</body>
+</html>

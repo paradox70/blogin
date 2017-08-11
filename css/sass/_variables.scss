@@ -1,10 +1,11 @@
 // COLORS
-
 $text-color: #333;
 $light-text-color: #666;
+
 $main-header-bg: #292929;
 $main-header-line: #1e1e1e;
 $main-highlight: #58c93a;
+
 $secondary-bg: #f6f6f6;
 $body-border-color: #e1e0e0;
 $pagination-bg: #E8E8E8;
@@ -13,16 +14,6 @@ $white: #FFF;
 $black: #000;
 $gray: #CCC;
 
-// NAVIGATION
-$mobile-nav-header-bg: #1B1B1B;
-$mobile-nav-bg: #2E2E2E;
-$mobile-nav-border: #1e1e1e;
-
-// MEDIA QUERIES
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
 
 
 // TYPOGRAPHY
@@ -35,3 +26,23 @@ $h3-size: 24px;
 $h4-size: 18px;
 $h5-size: 14px;
 $h6-size: 12px;
+
+
+
+// COMMENTS
+$comment-border-color: #e1e3e6;
+$comment-highlight: $main-highlight;
+
+
+
+// NAVIGATION
+$mobile-nav-header-bg: #1B1B1B;
+$mobile-nav-bg: #2E2E2E;
+$mobile-nav-border: #1e1e1e;
+
+
+
+// MEDIA QUERIES
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;

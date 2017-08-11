@@ -1,45 +1,38 @@
 // Screen XS section paddings = 60px
 // Screen SM section paddings = 90px
 
-*:focus { outline: none;} // Fix mainly for Chrome
+
+*:focus { outline: none; } // Fix mainly for Chrome
+
 
 body {
-	font-size: $basic-font-size;
-	color: $text-color;
   font-family: 'Open Sans', sans-serif;
+  font-size: $basic-font-size;
+  color: $text-color;
+
+  @include screen-md { font-size: $larger-font-size; }
 }
 
-@include screen-md {
-  body {
-    font-size: $larger-font-size;
-  }
+
+a {
+  color: darken($text-color, 15%);
+
+  &:hover, &:active { color: darken($main-highlight, 12%); }
+  &:focus { color: darken($main-highlight, 15%); }
 }
 
-p {
-	line-height: 1.4;
-}
 
-h1 {
-  font-size: $h1-size;
-}
+p { line-height: 1.4; }
+
+
+h1 { font-size: $h1-size; }
 
 h2 {
   font-size: $h2-size;
   line-height: 1.2;
 }
 
-h3 {
-  font-size: $h3-size;
-}
-
-h4 {
-  font-size: $h4-size;
-}
-
-h5 {
-  font-size: $h5-size;
-}
-
-h6 {
-  font-size: $h6-size;
-}
+h3 { font-size: $h3-size;}
+h4 { font-size: $h4-size;}
+h5 { font-size: $h5-size;}
+h6 { font-size: $h6-size;}

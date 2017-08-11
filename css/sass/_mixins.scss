@@ -4,23 +4,48 @@
   }
 }
 
-@mixin screen-sm {
-  @media (min-width: $screen-sm-min) {
-	 @content
-  }
+
+@mixin screen-min($width) {
+   @media (min-width: $width) {
+      @content
+   }
 }
+
+
+@mixin screen-max($width) {
+   @media (max-width: $width) {
+      @content
+   }
+}
+
+
+@mixin screen-min-max($minWidth, $maxWidth) {
+   @media (min-width: $minWidth) and (max-width: $maxWidth) {
+      @content
+   }
+}
+
+
+@mixin screen-sm {
+   @media (min-width: $screen-sm-min) {
+      @content
+   }
+}
+
 
 @mixin screen-md {
-  @media (min-width: $screen-md-min) {
-	 @content
-  }
+   @media (min-width: $screen-md-min) {
+      @content
+   }
 }
 
+
 @mixin screen-lg {
-  @media (min-width: $screen-lg-min) {
-	 @content
-  }
+   @media (min-width: $screen-lg-min) {
+      @content
+   }
 }
+
 
 @mixin invisible-text {
   text-indent: 100%;
@@ -28,21 +53,26 @@
   overflow: hidden;
 }
 
+
 @mixin border-radius-single ($size) {
 	border-radius: $size;
 }
+
 
 @mixin border-radius-variable ($tl-size, $tr-size, $br-size, $bl-size) {
 	border-radius: $tl-size $tr-size $br-size $bl-size;
 }
 
+
 @mixin transition-basic {
 	transition: all 0.2s ease-in-out;
 }
 
+
 @mixin transition-variable($lenght) {
 	transition: all $lenght ease-in-out;
 }
+
 
 @mixin clearfix {
   &:before, &:after {
@@ -59,6 +89,7 @@
   }
 }
 
+
 @mixin absolute-center {
 	 position: absolute;
 	 left: 50%;
@@ -66,16 +97,19 @@
 	 transform: translate(-50%,-50%);
 }
 
+
 @mixin absolute-center-vertical {
 	 position: absolute;
 	 top: 50%;
 	 transform: translate(0,-50%);
 }
 
+
 @mixin touch-fix {
   -webkit-user-select: none;
   -webkit-touch-callout: none; 
 }
+
 
 @mixin transform-scale($scale) {
   -webkit-transform: scale($scale);
@@ -83,10 +117,12 @@
   transform: scale($scale);
 }
 
+
 @mixin testing($color: pink) {
 	 background: $color;
 	 color: darken($color, 30%);
 }
+
 
 @mixin outline-test{
   * {
