@@ -1,0 +1,94 @@
+// #### POSTS ####
+// Don't let the name fool you, those styles also apply for pages.
+
+.page-title {
+  margin-bottom: 35px;
+
+  @include screen-md { margin-bottom: 50px; }
+
+  .title {
+    margin: 0;
+    font-size: 28px;
+  }
+}
+
+
+.post { position: relative; }
+
+
+.post-header {
+  .title {
+    margin:0;
+    padding: 10px 15px 5px 15px;
+    font-size: 25px;
+
+    & a { 
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover, &:active { color: darken($main-highlight, 12%); }
+      &:focus { color: darken($main-highlight, 15%); }
+    }
+  }
+}
+
+
+.post-content { padding: 5px 15px 15px 15px; }
+
+
+.post-footer {
+  margin: 0 0 45px 0;
+  padding: 15px;
+  border-bottom: 1px solid $body-border-color;
+  @include clearfix;
+
+  @include screen-md {
+    margin-bottom: 65px;
+    padding-bottom: 25px;
+  }
+
+
+  a { text-decoration: none; }
+
+  // Lighter color for icons.
+  .icon { color: lighten($text-color, 15%); }
+
+  // Spacing betwen footer details like data, autor, comment count.
+  span:not(:last-of-type) { padding-right: 10px;}
+
+
+  // Buttons in footer should be moved to the right side.
+  .button { 
+    float: right;
+
+    // Spacing between buttons - or in practice <a> tags that are direct siblings.
+    &:not(:last-of-type) { margin-left: 5px; };
+
+    &.edit { 
+      border-color: lighten($main-highlight, 15%);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+.post-date { // Styles for date in post footer.
+  display: inline-block;
+  padding: 13px 0 0 0;
+}
+
+
+.button.more.touch_effect {
+  @include touch-fix;
+  border: 2px solid $main-highlight;
+}
+
+
+// Single post / page styles
+.post.single {
+  .post-footer { 
+    margin-bottom: 15px;
+    border-bottom: none;
+  }
+}

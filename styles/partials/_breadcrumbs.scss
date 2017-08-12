@@ -1,0 +1,47 @@
+// #### BREADCRUMBS ####
+.breadcrumbs {
+  padding-bottom: 30px;
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type) {
+      // Clone of fontello .icon-angle-double-right
+      &:after {
+        content: '\f101';
+        display: inline-block;
+        width: 1em;
+        margin-left: 5px;
+        font: normal normal normal 1em/1em "fontello";
+        text-align: center;
+        text-decoration: inherit;
+        text-transform: none;
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+
+  a {
+    color: darken($main-highlight, 5%);
+    text-decoration: none;
+
+    &:hover, &:active { 
+      color: darken($main-highlight, 12%);
+      text-decoration: underline;
+    }
+
+    &:focus { 
+      color: darken($main-highlight, 15%);
+      text-decoration: underline;
+    }
+  }
+}

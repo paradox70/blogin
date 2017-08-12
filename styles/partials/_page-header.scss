@@ -1,3 +1,15 @@
+// Page header
+header.main {
+  position: relative;
+  min-height: 100px;
+  border-bottom: 6px solid $main-header-line;
+  background: $main-header-bg;
+  color: $white;
+
+  @include screen-md { min-height: 137px; }
+}
+
+
 // Styles for mobile nav for screens <992px
 
 #nav-open { // Button for turning on menu
@@ -31,6 +43,20 @@
 
 
 .logo {
+  float: left;
+  padding: 20px 0 0 5px;
+  color: $white;
+  font-size: $h1-size;
+  text-decoration: none;
+
+  @include screen-md {
+    padding: 38px 0 0 30px;
+    font-size: 1.1*$h1-size;
+  }
+
+  // Styles for dot at the end of logo.
+  span { color: $main-highlight; }
+
 	&:hover, &:active, &:focus { color: #fff; }
 }
 

@@ -1,0 +1,129 @@
+// #### PAGINATION ####
+
+.pagination-box { // Class used for adding border and positioning
+  position: relative;
+  margin-top: 60px;
+  border-top: 1px solid $body-border-color;
+
+  @include screen-md { margin-top: 20px; }
+}
+
+
+.pag { // General styles for PREVIOUS & NEXT buttons.
+  position: absolute;
+  top: 27px;
+  font-size: 20px;
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover, &:active {
+    .icon { color: $main-highlight;}
+  }
+}
+
+.pag.touch_effect {
+  .icon {
+    @include touch-fix;
+    color: $main-highlight;
+  }
+}
+
+.pag { 
+  // General styles for PREVIOUS & NEXT buttons.
+  position: absolute;
+  top: 27px;
+  font-size: 20px;
+  color: $text-color;
+  text-decoration: none;
+
+  &.touch_effect {
+    .icon {
+      @include touch-fix;
+      color: $main-highlight;
+    }
+  }
+
+  &:hover, &:active {
+    .icon { color: $main-highlight;}
+  }
+
+  // On small screens turns off span with "NEWER/OLDER POSTS" // and increases "<< >>" icon size.
+  span {
+    display: none;
+
+    @include screen-sm { display: inline; }
+  }
+  
+  .icon { 
+    font-size: 2em;
+
+    @include screen-sm { font-size: 1em }
+  }
+
+
+  // Change positon of prev / next links.
+  &.prev { left: 5px; }
+  &.next { right: 5px; }
+
+  @include screen-custom(500px) {
+    &.prev { left: 35px; }
+    &.next { right: 35px; }
+  }
+
+
+  // Turns off link and changes font color.
+  &.off { 
+    color: #b5b5b5;
+    cursor: default;
+    pointer-events: none;
+    
+    &:hover, &:active {
+      .icon { color: #b5b5b5; }
+    }
+  }
+}
+
+.pagination { 
+  list-style-type: none;
+  margin: 0;
+  padding: 40px 0;
+  text-align: center;
+
+  // Styles for current page number.
+  .active { 
+    color: $text-color;
+    border: 1px solid darken($pagination-bg, 20%);
+    background: darken($pagination-bg, 5%);
+  }
+
+
+  li {
+    margin: 0 5px 0 0;
+    background: $pagination-bg;
+    display: inline-block;
+    
+    &:last-of-type { margin: 0; }
+  }
+
+
+  a { 
+    display: block;
+    padding: 6px 13px;
+    border: 1px solid darken($pagination-bg, 5%);
+    color: #b5b5b5;
+    font-size: $larger-font-size;
+    text-decoration: none;
+
+    &.touch_effect {
+      @include touch-fix;
+      color: $text-color;
+      border: 1px solid $main-highlight;
+    }
+
+    &:hover, &:active {
+      color: $text-color;
+      border: 1px solid $main-highlight;
+    }
+  }
+}
+

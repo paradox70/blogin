@@ -1,0 +1,68 @@
+// #### FOOTER ####
+
+footer.main {
+  padding: 30px 0;
+  border-top: 1px solid $body-border-color;
+  background: $secondary-bg;
+  text-align: center;
+
+  @include screen-md { padding: 40px 0; }
+
+  // Adapting logo in footer (smaller, new color, in block)
+  .logo {
+    float: none;
+    padding: 0;
+    color: #333;
+    font-size: $h1-size/1.1;
+
+    @include screen-md { font-size: $h1-size; }
+  }
+
+
+  .copyright {
+    padding: 10px 0 15px 0;
+    color: $light-text-color;
+
+    @include screen-md { padding: 15px 0 20px 0; }
+  }
+}
+
+
+.social-media { // General styles for social media UL
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  // Base for social media icons
+  li { 
+    display: inline-block;
+    margin: 0 10px 0 0;
+    background: lighten($light-text-color, 30%);
+
+    &:last-of-type { margin: 0; }
+  }
+
+  // Styles for social media icons
+  a { 
+    display: block;
+    padding: 6px;
+    color: $secondary-bg;
+    font-size: 1.4em;
+    text-decoration: none;
+  }
+}
+
+ // Hover & effects for specific social media + Fix for touch screens
+.fb { &:hover, &:active { background: #3b5998; }} // Facebook
+.fb.touch_effect {@include touch-fix; background: #3b5998;}
+
+.twt { &:hover, &:active { background: #55acee; }} // Twitter
+.twt.touch_effect {@include touch-fix; background:#55acee;}
+
+.inst { &:hover, &:active { background: #e95950; }} // Instagram
+.inst.touch_effect {@include touch-fix; background:#e95950}
+
+.blg { &:hover, &:active { background: #f87f14; }} // Blogger
+.blg.touch_effect {@include touch-fix; background:#f87f14}
+
+.fb,.twt,.inst,.blg { &:hover, &:active { @include transition-variable(0.1s); }}

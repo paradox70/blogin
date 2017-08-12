@@ -1,0 +1,35 @@
+// #### POST NAVIGATION ####
+// Previous and next post links
+
+.post-navigation {
+  padding: 40px 0 35px 0;
+  @include clearfix;
+
+  .nav-prev {
+    float: left;
+    width: 50%;
+  }
+
+  .nav-next {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+
+  a {
+    display: block;
+    color: $light-text-color;
+    font-weight: bold;
+    text-decoration: none;
+
+    .post-title {
+      display: block;
+      padding-top: 5px;
+      font-weight: normal;
+    }
+
+    &:hover, &:active {
+      .post-title { color: darken($main-highlight, 12%); }
+    }
+  }
+}

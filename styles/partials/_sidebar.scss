@@ -1,0 +1,59 @@
+// #### SIDEBAR ####
+
+// Main sidebar content
+.sidebar-box { 
+  padding: 0 0 30px 0;
+
+  @include screen-md { padding: 0 0 50px 0 }
+
+
+   p {
+    margin: 0 15px 15px 15px;
+    padding: 0;
+  }
+}
+
+.sidebar-header {
+  margin: 0 -15px 20px 0;
+  padding: 15px 25px;
+  border-left: 4px solid $main-highlight;
+  background: $secondary-bg;
+  color: $light-text-color;
+  font-size: $h4-size;
+  text-transform: uppercase;
+}
+
+
+// Sidebar form styles
+.sidebar-box form {
+  padding-top: 10px;
+
+  input {
+    width: 235px;
+    margin: 0 0 0 15px;
+    padding: 13px 0 13px 13px;
+    border: 1px solid $body-border-color;
+    border-right: none;
+
+    @include screen-lg { width: 300px; }
+  }
+
+
+  .submit {
+    margin: 0;
+    padding: 13px 13px 13px 5px;
+    border: 1px solid $body-border-color;
+    border-left: none;
+    background: $white;
+    color: lighten($light-text-color, 30%);
+    cursor: pointer;
+
+    &.touch_effect {
+      @include touch-fix;
+      color: $light-text-color;
+    }
+
+
+    &:hover, &:active { color: $light-text-color; }
+  }
+}

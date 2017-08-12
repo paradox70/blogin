@@ -1,0 +1,53 @@
+// #### GENERAL ####
+
+// Class used for adding border and padding to the main content
+.content-box { 
+  border-left: 1px solid $body-border-color;
+  border-right: 1px solid $body-border-color;
+  padding-top: 15px;
+
+  @include screen-md {
+    padding-top: 60px;
+
+    .main-content { padding-right: 30px; }
+  }
+
+}
+
+
+// General class for blogin buttons.
+.button {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 20px;
+  border: 2px solid darken($body-border-color, 5%);
+  border-radius: 25px;
+  background: $secondary-bg;
+  color: $light-text-color;
+  text-decoration: none;
+
+  &:hover, &:active {
+    border: 2px solid $main-highlight;
+    color: $light-text-color;
+  }
+}
+
+
+// #### MESSAGE BOX ####
+// Used for displaying errors or info about no search results.
+
+.message-box {
+  .title {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+
+    &.error-404 { font-size: 70px; }
+  }
+
+  p { margin: 10px 0; }
+}
+
+
+
+
